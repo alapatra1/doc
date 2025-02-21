@@ -22,3 +22,71 @@ Azure Subscription Creator: Granted permission to create new Azure subscriptions
 For a detailed overview of these roles and their specific tasks, refer to the official Microsoft documentation:
 
 Understanding these roles and their respective permissions is crucial for effective billing management and access control within your organization.
+
+
+
+
+
+
+
+Under the Microsoft Customer Agreement (MCA), Azure provides a structured set of billing roles to manage access and permissions effectively. Below is a comprehensive list of these roles, along with their descriptions, corresponding API endpoints, and Azure CLI commands for management.
+
+1. Billing Account Roles:
+
+Billing Account Owner: Full management permissions for the billing account, including role assignments and billing profile management.
+Billing Account Contributor: Manage all aspects of the billing account except for assigning roles and permissions.
+Billing Account Reader: Read-only access to all billing account information.
+2. Billing Profile Roles:
+
+Billing Profile Owner: Manage all aspects of a billing profile, including invoices and payment methods.
+Billing Profile Contributor: Manage billing profile details but cannot assign roles or permissions.
+Billing Profile Reader: Read-only access to billing profile information.
+Invoice Manager: View and process invoices associated with the billing profile.
+3. Invoice Section Roles:
+
+Invoice Section Owner: Full management permissions for an invoice section, including assigning roles and managing associated subscriptions.
+Invoice Section Contributor: Manage all aspects of an invoice section except for assigning roles and permissions.
+Invoice Section Reader: Read-only access to invoice section details.
+4. Additional Role:
+
+Azure Subscription Creator: Permission to create new Azure subscriptions under the billing account.
+Managing Billing Roles Programmatically:
+
+Azure provides REST APIs and Azure CLI commands to manage these billing roles programmatically.
+
+REST API Endpoints:
+
+Create or Update a Billing Role Assignment:
+Endpoint:
+PUT https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingRoleAssignments/{billingRoleAssignmentName}?api-version=2019-10-01-preview
+Description: Assigns or updates a role within a billing account.
+Documentation: Role Assignments - Put
+Delete a Billing Role Assignment:
+Endpoint:
+DELETE https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountName}/billingRoleAssignments/{billingRoleAssignmentName}?api-version=2019-10-01-preview
+Description: Removes a specified role assignment from the billing account.
+Documentation: Role Assignments - Delete
+Azure CLI Commands:
+
+Create a Billing Role Assignment:
+Command:
+az billing role-assignment create --account-name {billingAccountName} --role-definition-name {roleName} --principal-id {principalId}
+Description: Assigns a specified role to a user or service principal within the billing account.
+Documentation: az billing role-assignment create
+Delete a Billing Role Assignment:
+Command:
+az billing role-assignment delete --account-name {billingAccountName} --name {roleAssignmentName}
+Description: Removes a specified role assignment from the billing account.
+Documentation: az billing role-assignment delete
+Important Considerations:
+
+Permissions: Ensure you have the necessary permissions to manage billing role assignments within your billing account.
+Agreement Type: These commands and API endpoints are applicable to billing accounts under the Microsoft Customer Agreement.
+Preview Status: Some Azure CLI commands for billing role assignments may be in preview and could undergo changes.
+For a comprehensive understanding and the most up-to-date information, refer to the official Microsoft documentation on Billing Role Assignments and the Azure CLI billing role-assignment.
+
+By leveraging these APIs and commands, you can effectively automate and manage billing roles within your Microsoft Customer Agreement, enhancing operational efficiency and control.
+
+
+Sources
+

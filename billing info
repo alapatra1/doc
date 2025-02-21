@@ -1,0 +1,24 @@
+Under the Microsoft Customer Agreement (MCA), Azure provides a structured hierarchy of billing roles to manage access and permissions effectively. Below is a comprehensive list of these roles, along with their descriptions and corresponding documentation sources:
+
+1. Billing Account Roles:
+
+Billing Account Owner: Has full management permissions for the billing account, including the ability to assign roles and manage billing profiles.
+Billing Account Contributor: Can manage all aspects of the billing account except for assigning roles and permissions.
+Billing Account Reader: Has read-only access to all billing account information.
+2. Billing Profile Roles:
+
+Billing Profile Owner: Manages all aspects of a billing profile, including invoices and payment methods.
+Billing Profile Contributor: Can manage billing profile details but cannot assign roles or permissions.
+Billing Profile Reader: Has read-only access to billing profile information.
+Invoice Manager: Responsible for viewing and paying invoices associated with the billing profile.
+3. Invoice Section Roles:
+
+Invoice Section Owner: Has full management permissions for an invoice section, including assigning roles and managing associated subscriptions.
+Invoice Section Contributor: Can manage all aspects of an invoice section except for assigning roles and permissions.
+Invoice Section Reader: Has read-only access to invoice section details.
+4. Additional Role:
+
+Azure Subscription Creator: Granted permission to create new Azure subscriptions under the billing account.
+For a detailed overview of these roles and their specific tasks, refer to the official Microsoft documentation:
+
+Understanding these roles and their respective permissions is crucial for effective billing management and access control within your organization.
